@@ -6,7 +6,6 @@ import {
   List,
   ListItem,
   ListItemText,
-  Switch,
   Divider,
   Button,
   Dialog,
@@ -21,14 +20,8 @@ import { useAthleteContext } from '../contexts/AthleteContext';
 
 const Settings: React.FC = () => {
   const { athletes, assessments } = useAthleteContext();
-  const [darkMode, setDarkMode] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
-
-  const handleDarkModeToggle = () => {
-    setDarkMode(!darkMode);
-    setSnackbarOpen(true);
-  };
 
   const handleClearDataClick = () => {
     setOpenDialog(true);
@@ -42,6 +35,7 @@ const Settings: React.FC = () => {
     // In a real app, this would clear all data
     localStorage.removeItem('athletes');
     localStorage.removeItem('assessments');
+    localStorage.removeItem('themeMode'); // Also clear theme preference
     setOpenDialog(false);
     // Force page reload to clear state
     window.location.reload();
@@ -59,18 +53,6 @@ const Settings: React.FC = () => {
 
       <Paper elevation={2} sx={{ mb: 3 }}>
         <List>
-          <ListItem>
-            <ListItemText 
-              primary="Dark Mode" 
-              secondary="Toggle between light and dark theme"
-            />
-            <Switch
-              edge="end"
-              checked={darkMode}
-              onChange={handleDarkModeToggle}
-            />
-          </ListItem>
-          <Divider />
           <ListItem>
             <ListItemText 
               primary="Data Summary" 
@@ -119,12 +101,12 @@ const Settings: React.FC = () => {
         </DialogActions>
       </Dialog>
 
-      {/* Snackbar for dark mode toggle */}
+      {/* Snackbar for notifications */}
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={3000}
         onClose={handleSnackbarClose}
-        message="This feature will be implemented in a future update"
+        message="Operation completed"
       />
     </Box>
   );

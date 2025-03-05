@@ -13,8 +13,7 @@ import {
   ListItemIcon, 
   ListItemText, 
   Toolbar, 
-  Typography,
-  useTheme
+  Typography
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import DashboardIcon from '@mui/icons-material/Dashboard';
@@ -23,6 +22,7 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import SportsTennisIcon from '@mui/icons-material/SportsTennis';
 import SettingsIcon from '@mui/icons-material/Settings';
+import ThemeToggle from './ThemeToggle';
 
 const drawerWidth = 240;
 
@@ -31,7 +31,6 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const theme = useTheme();
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -93,9 +92,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
             Badminton Performance Tracker
           </Typography>
+          <ThemeToggle />
         </Toolbar>
       </AppBar>
       <Box

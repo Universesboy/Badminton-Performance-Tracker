@@ -45,6 +45,7 @@ export interface TechnicalSkill {
 
 export interface Competition {
   id: string;
+  athleteId: string;
   date: string;
   opponent: string;
   result: string;
