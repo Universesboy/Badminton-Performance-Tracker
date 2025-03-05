@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Badminton-Performance-Tracker/static/css/main.e6c13ad2.css",
+    "main.js": "/Badminton-Performance-Tracker/static/js/main.29ba7841.js",
+    "static/js/453.2f992dbd.chunk.js": "/Badminton-Performance-Tracker/static/js/453.2f992dbd.chunk.js",
+    "index.html": "/Badminton-Performance-Tracker/index.html",
+    "main.e6c13ad2.css.map": "/Badminton-Performance-Tracker/static/css/main.e6c13ad2.css.map",
+    "main.29ba7841.js.map": "/Badminton-Performance-Tracker/static/js/main.29ba7841.js.map",
+    "453.2f992dbd.chunk.js.map": "/Badminton-Performance-Tracker/static/js/453.2f992dbd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.29ba7841.js"
+  ]
+}
